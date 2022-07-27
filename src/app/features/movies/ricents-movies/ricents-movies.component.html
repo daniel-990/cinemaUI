@@ -1,0 +1,29 @@
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button"
+      data-bs-target="#carouselExampleCaptions"
+      attr.data-bs-slide-to="{{pos}}"
+      [ngClass]="pos == 0 ? 'active':''"
+      aria-current="true"
+      attr.aria-label="{{pos + 1}}" *ngFor="let item of pelicula; let pos = index">
+    </button>
+  </div>
+  <div class="carousel-inner">
+    <div [ngClass]="pos == 0 ? 'carousel-item active':'carousel-item'" *ngFor="let items of pelicula; let pos = index">
+      <img src="{{items.img}}" class="d-block w-100">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{items.nombre}}</h5>
+        <p>{{items.descripcion}}</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>

@@ -1,0 +1,21 @@
+<div class="container contenedor-cataloogo">
+  <div class="row">
+    <div *ngFor="let item of catalogo" class="col-md-3">
+      <div class="card">
+        <img src="{{item.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h4 class="text-center">{{item.nombre}}</h4>
+          <p class="card-text">
+            <strong>Horas: </strong>{{item.duracion}} Horas
+            <br>
+            <strong>Fecha de Estreno: </strong>{{item.estreno}}
+            <br>
+            <strong>Genero: </strong>{{item.genero}}
+            <br>
+            <strong>Para: </strong>{{item.exclusividad}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
