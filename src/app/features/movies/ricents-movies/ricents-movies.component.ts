@@ -10,14 +10,14 @@ import { peliculas } from './models/peliculas';
 export class RicentsMoviesComponent implements OnInit {
 
   //se carga el servicio que me esta ejecutando el get movie service
-  constructor(private movieService: MoviesService) {
+  // constructor(private movieService: MoviesService) {
 
-  }
+  // }
 
   ngOnInit(): void {
-    this.movieService.getRecentMovies().subscribe(data => {
-      console.log(data);
-    });
+    // this.movieService.getRecentMovies().subscribe(data => {
+    //   console.log(data);
+    // });
   }
 
     pelicula: peliculas[] = [

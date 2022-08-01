@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { catalogos } from './models/catalogos';
+import { MoviesService } from '../services/movies.service';
+
 
 @Component({
   selector: 'app-catalogo',
@@ -8,9 +10,12 @@ import { catalogos } from './models/catalogos';
 })
 export class CatalogoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private movieService: MoviesService) { }
 
   ngOnInit(): void {
+    this.movieService.getRecentMovies().subscribe(data=>{
+      console.log(data);
+    })
   }
 
   catalogo: catalogos[] = [
@@ -19,5 +24,7 @@ export class CatalogoComponent implements OnInit {
     {id: 0,nombre: "Mr Robot", estreno: "15-jul-2022",genero: "hackers", exclusividad: "para mayores de 18 años", duracion: 1, url: "https://i.picsum.photos/id/72/400/400.jpg?hmac=Plu7Ga8ryGrQh_ES-RSelfvt5JHDrz9SVxMWiUb2PKI"},
     {id: 0,nombre: "Cowboy bebop", estreno: "5-jul-2022",genero: "anime", exclusividad: "para mayores de 18 años", duracion: 2, url: "https://i.picsum.photos/id/782/400/400.jpg?hmac=eMVfdPKJ9KxY3ccGamAFLp591SxrPNHxysFe9i9DSxw"}
   ]
+
+
 
 }
